@@ -2,10 +2,9 @@
 
 ## 简介
 
-[Fast海报API编辑器使用文档](docs/Fast海报API编辑器使用文档.md)
+[Fast海报API使用文档](docs/Fast海报API使用文档.md)
 
 ![海报编辑器界面](http://pic.qn.prodapi.cn/typora/hexo/thomas/5sf8x.jpg)
-
 
 ## 客户端调用示例代码
 
@@ -26,3 +25,21 @@ System.out.println(url);
 byte[] data = client.down();
 FileUtils.writeByteArrayToFile(new File("a.jpg"), data);
 ```
+
+
+## 特性
+ * 文本支持自动换行，中划线
+ * 圆角头像组件
+ * 组件可拖拽，方便布局
+ * 支持动态调整海报，不用修改代码
+ * 支持最终效果查看，告别以往用代码来调试的笨拙
+ * 
+ 
+ 
+## 备注
+
+项目上线有大半年了，一直在生成环境使用，最近才有时间开源出来，希望能减少大家编写海报相关业务的工作。有什么好的想法，欢迎大家和我联系
+
+
+
+ 
