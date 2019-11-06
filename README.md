@@ -1,11 +1,10 @@
-# Fast海报API编辑器 java客户端
+# Fast海报API 
 
-## 海报编辑器
+## 简介
 
-示例海报
+[Fast海报API编辑器使用文档](docs/Fast海报API编辑器使用文档.md)
 
 ![海报编辑器界面](http://pic.qn.prodapi.cn/typora/hexo/thomas/5sf8x.jpg)
-
 
 
 ## 客户端调用示例代码
