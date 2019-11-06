@@ -13,7 +13,7 @@
 
 项目上线有小半年了，已在多个生产环境使用，最近才有时间整理出来，大家可以放心使用。希望能减少大家编写海报相关业务的工作。
 
-[点击进入编辑器](http://p0.prodapi.cn/#/)
+[点击进入编辑器](http://p0.prodapi.cn/#/from_github)
 
 ![海报编辑器界面](http://pic.qn.prodapi.cn/typora/hexo/thomas/777ns.jpg)
 
