@@ -31,6 +31,7 @@ public class PosterClient {
     private PosterClient() {
     }
 
+    private Map<String, String> mapAuth = new HashMap<>();
     private Map<String, String> map = new HashMap<>();
 
     public static class Builder {
@@ -38,8 +39,8 @@ public class PosterClient {
         PosterClient client = new PosterClient();
 
         public Builder(String accessKey, String posterId) {
-            client.map.put("accessKey", accessKey);
-            client.map.put("posterId", posterId);
+            client.mapAuth.put("accessKey", accessKey);
+            client.mapAuth.put("posterId", posterId);
         }
 
         public Builder add(String name, String value) {
@@ -61,10 +62,21 @@ public class PosterClient {
      * @return
      */
     public String get() {
+        return get(this.map);
+    }
+
+    /**
+     * 获取海报URL地址
+     *
+     * @param map
+     * @return
+     */
+    public String get(Map<String, String> map) {
         if (url != null) {
             return url;
         }
         try {
+            map.putAll(mapAuth);
             MediaType mediaType = MediaType.parse("application/json");
             String json = JSON.toJSONString(map, true);
             RequestBody body = RequestBody.create(mediaType, json);
@@ -100,8 +112,17 @@ public class PosterClient {
         if (url == null) {
             this.get();
         }
+        return down(this.url);
+    }
+
+    /**
+     * 下载海报.
+     *
+     * @param url 图片URL地址
+     * @return
+     */
+    public byte[] down(String url) {
         if (url != null) {
-            // 执行获取逻辑
             try {
                 Request request = new Request.Builder()
                         .url(url)
