@@ -37,6 +37,10 @@ byte[] data = client.down();
 FileUtils.writeByteArrayToFile(new File("a.jpg"), data);
 ```
 
+[生成的海报地址](http://p0.prodapi.cn/api/img/16b29b051763eeb08dcc47a0f187be73.jpg)
+
+![http://p0.prodapi.cn/api/img/16b29b051763eeb08dcc47a0f187be73.jpg](http://p0.prodapi.cn/api/img/16b29b051763eeb08dcc47a0f187be73.jpg)
+
 ### 类似项目
 
 
