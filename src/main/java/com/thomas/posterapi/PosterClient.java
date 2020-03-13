@@ -20,7 +20,7 @@ public class PosterClient {
             .connectTimeout(6, TimeUnit.SECONDS)
             .build();
 
-    final static String URL = "http://p0.prodapi.cn/api/link";
+    final static String URL = "http://127.0.0.1:9001/api/link";
 
     final static String USER_AGENT = "PosterClient-V1.0.0";
 
