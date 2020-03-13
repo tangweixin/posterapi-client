@@ -49,12 +49,12 @@ public class PosterClient {
      * @param params   参数列表
      * @return String
      */
-    public String getUrl(Integer posterId, Map<String, String> params) {
+    public String getUrl(String posterId, Map<String, String> params) {
         if (params == null) {
             params = new HashMap<>();
         }
         params.put("accessKey", this.accessKey);
-        params.put("posterId", String.valueOf(posterId));
+        params.put("posterId", posterId);
 
         String url = this.endpoint + "/api/link";
 
