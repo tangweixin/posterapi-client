@@ -14,3 +14,7 @@ target/
 *.njsproj
 *.sln
 .svn/
+
+
+*.jpg
+*.png
