@@ -16,7 +16,7 @@ public class PosterClientDemo {
         params.put("头像", "http://demo.qn.prodapi.cn/images/qiniu.png");
         params.put("说明文字", "功能还不够完善，需要多多改进");
         params.put("图片1", "/storage/upload/c00416a0985212.png");
-        String posterId = "2";
+        String posterId = "5";
         String url = posterClient.getUrl(posterId, params);
         System.out.println("url=" + url);
         if (url != null) {
