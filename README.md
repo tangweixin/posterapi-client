@@ -1,47 +1,51 @@
 
-# Fast海报API
+# prodapi海报设计器
 
-一个生成动态海报的神器
+快速开发海报、节省宝贵时间。
 
 ### 特性
 
- * 简单：组件丰富、支持拖拽、复制、效果预览、下载等功能。
+ * 简单：组件丰富、支持拖拽、复制、预览、下载等功能。
  * 高效：编辑好海报后，能直接生成调用代码。
- * 方便：只要参数不变，不必修改代码，直接在编辑器修改海报即可获得最新的海报
+ * 便捷：只要参数名称不变，不必修改任何代码，直接在编辑器修改海报保存即可获得最新的海报效果
 
 ### 简介
 
-项目上线有小半年了，已在多个生产环境使用，最近才有时间整理出来，大家可以放心使用。希望能减少大家编写海报相关业务的工作。
+在海报设计器设计好海报，即可生成调用代码，节省海报开发的时间。
 
-[点击进入编辑器](http://p0.prodapi.cn/#/from_github)
+如果后期海报需要调整，直接在设计器调整，保存海报即可，无需修改代码。
 
-![海报编辑器界面](http://pic.qn.prodapi.cn/typora/hexo/thomas/777ns.jpg)
+[点击进入编辑器](http://poster.prodapi.cn/index.html#/from_github)
+
+![海报编辑器界面](http://pic.qn.prodapi.cn/typora/hexo/thomas/ibz1k.jpg)
 
 ### 客户端调用示例代码
 
 ```java
-String accessKey = "27a171c8e02b4888832095efab1ec761";
-String posterId = "10008";
-PosterClient client = PosterClient.newBulder(accessKey, posterId)
-        .add("title", "NO. 10009")
-        .add("img", "http://pic.qn.prodapi.cn/typora/hexo/thomas/b36oc.jpg")
-        .add("qrcodeUrl", "http://p0.prodapi.cn/#/")
-        .build();
+PosterClient posterClient = new PosterClient("http://poster.prodapi.cn/", "t8xAmqoXQliBhMsV");
 
-// 获取海报下载地址
-String url = client.get();
-System.out.println(url);
-
-// 下载海报
-byte[] data = client.down();
-FileUtils.writeByteArrayToFile(new File("a.jpg"), data);
+Map<String, String> params = new HashMap<>();
+params.put("头像", "http://demo.qn.prodapi.cn/images/qiniu.png");
+params.put("说明文字", "世上无难事");
+params.put("图片1", "/storage/upload/c00416a0985212.png");
+String posterId = "1";
+// 获取海报链接
+String url = posterClient.getUrl(posterId, params);
+System.out.println("url=" + url);
+if (url != null) {
+    // 保存海报
+    posterClient.saveToPath(url, "temp." + FilenameUtils.getExtension(url));
+}
 ```
 
-[生成的海报地址](http://p0.prodapi.cn/api/img/16b29b051763eeb08dcc47a0f187be73.jpg)
 
-![http://p0.prodapi.cn/api/img/16b29b051763eeb08dcc47a0f187be73.jpg](http://p0.prodapi.cn/api/img/16b29b051763eeb08dcc47a0f187be73.jpg)
+生成的海报地址
+[http://poster.prodapi.cn/view/8052e3790832d48affc2374ff68b6824.png](http://poster.prodapi.cn/view/8052e3790832d48affc2374ff68b6824.png)
+
+![http://poster.prodapi.cn/view/8052e3790832d48affc2374ff68b6824.png](http://poster.prodapi.cn/view/8052e3790832d48affc2374ff68b6824.png)
 
 ### 类似项目
+
 
 
 
