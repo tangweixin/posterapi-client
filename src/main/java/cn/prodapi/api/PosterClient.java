@@ -76,7 +76,7 @@ public class PosterClient {
             if (o.getInteger("code") == 0) {
                 url = o.getString("url");
             } else {
-                System.out.println(o.getString("msg"));
+                throw new RuntimeException("获取海报链接异常: " + o.getString("msg"));
             }
             return endpoint + url;
         } catch (IOException e) {
