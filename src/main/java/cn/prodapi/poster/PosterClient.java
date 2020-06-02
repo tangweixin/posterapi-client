@@ -1,4 +1,4 @@
-package cn.prodapi.api;
+package cn.prodapi.poster;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
