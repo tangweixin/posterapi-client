@@ -7,9 +7,8 @@ public class PosterClientDemo {
 
     public static void main(String[] args) {
 
-//        PosterClient posterClient = new PosterClient("http://127.0.0.1:9001/", "t8xAmqoXQliBhMsV");
-//        PosterClient posterClient = new PosterClient("http://127.0.0.1:9001/", "ADD2F37C19FAD36D73D225AA9E6C2968");
-        PosterClient posterClient = new PosterClient("https://poster.prodapi.cn/", "t8xAmqoXQliBhMsV");
+        PosterClient posterClient = new PosterClient("http://127.0.0.1:9001/", "2NAPIFheaXyL4d2r", "J5GlMp9mzqkTgAiu");
+//        PosterClient posterClient = new PosterClient("https://poster.prodapi.cn/", "2NAPIFheaXyL4d2r", "J5GlMp9mzqkTgAiu");
 
         Map<String, String> params = new HashMap<>();
 //        params.put("qrcode", "http://demo.qn.prodapi.cn/images/qiniu.png");
