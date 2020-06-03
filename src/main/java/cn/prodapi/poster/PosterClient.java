@@ -29,10 +29,15 @@ public class PosterClient {
      * 访问KEY
      */
     private String accessKey;
+    /**
+     * 访问密码
+     */
+    private String secretKey;
 
-    public PosterClient(String endpoint, String accessKey) {
+    public PosterClient(String endpoint, String accessKey, String secretKey) {
 
         this.accessKey = accessKey;
+        this.secretKey = secretKey;
 
         endpoint = endpoint.trim();
         if (endpoint.endsWith("/")) {
@@ -54,6 +59,7 @@ public class PosterClient {
             params = new HashMap<>();
         }
         params.put("accessKey", this.accessKey);
+        params.put("secretKey", this.secretKey);
         params.put("posterId", posterId);
 
         String url = this.endpoint + "/api/link";
