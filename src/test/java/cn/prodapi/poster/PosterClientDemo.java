@@ -7,7 +7,8 @@ public class PosterClientDemo {
 
     public static void main(String[] args) {
 
-        PosterClient posterClient = new PosterClient("http://127.0.0.1:9001/", "2NAPIFheaXyL4d2r", "J5GlMp9mzqkTgAiu");
+//        PosterClient posterClient = new PosterClient("http://127.0.0.1:9001/", "2NAPIFheaXyL4d2r", "J5GlMp9mzqkTgAiu");
+        PosterClient posterClient = new PosterClient("http://127.0.0.1:9001/", "2NAPIFheaXyL4d2r", "00000_J5GlMp9mzqkTgAiu");
 //        PosterClient posterClient = new PosterClient("https://poster.prodapi.cn/", "2NAPIFheaXyL4d2r", "J5GlMp9mzqkTgAiu");
 
         Map<String, String> params = new HashMap<>();
@@ -19,8 +20,8 @@ public class PosterClientDemo {
         params.put("bgUrl", "http://equipment1.oss-cn-shenzhen.aliyuncs.com/20200519/34cbe14253d347b9b4732cfe25d620ec.jpg");
         params.put("bgUrl", "http://equipment1.oss-cn-shenzhen.aliyuncs.com/20200519/65c1747b4b274e30951d64735142e135.jpg");
         params.put("bgUrl", "http://equipment1.oss-cn-shenzhen.aliyuncs.com/20200519/6fdff97b08a947cf87605fcbc3cd09ad.jpg");
-        params.put("qrcode", "功能还不够完善，需要多多改进");
-        params.put("codeNo", "4300002020051911450003");
+//        params.put("codeNo", "4300002020051911450003");
+        params.put("codeNo", "中文测试");
         String posterId = "1";
         String url = posterClient.getUrl(posterId, params);
         System.out.println("url=" + url);
