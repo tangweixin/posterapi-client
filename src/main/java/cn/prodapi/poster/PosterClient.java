@@ -84,7 +84,8 @@ public class PosterClient {
             } else {
                 throw new RuntimeException("获取海报链接异常: " + o.getString("msg"));
             }
-            return endpoint + url;
+
+            return url.startsWith("http") ? url : endpoint + url;
         } catch (IOException e) {
             throw new RuntimeException("获取海报链接异常", e);
         }
